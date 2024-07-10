@@ -1,0 +1,327 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%Title: RNA Dot Plot
+%%Creator: ViennaRNA-2.2.7
+%%CreationDate: Wed Jul 10 16:36:57 2024
+%%BoundingBox: 66 211 518 662
+%%DocumentFonts: Helvetica
+%%Pages: 1
+%%EndComments
+
+%Options: 
+% 
+%Heterodimer AB FreeEnergy= -18.398851065
+
+%This file contains the square roots of the base pair probabilities in the form
+% i  j  sqrt(p(i,j)) ubox
+
+%%BeginProlog
+/DPdict 100 dict def
+DPdict begin
+/logscale false def
+/lpmin 1e-05 log def
+
+/box { %size x y box - draws box centered on x,y
+   2 index 0.5 mul sub            % x -= 0.5
+   exch 2 index 0.5 mul sub exch  % y -= 0.5
+   3 -1 roll dup rectfill
+} bind def
+
+/ubox {
+   logscale {
+      log dup add lpmin div 1 exch sub dup 0 lt { pop 0 } if
+   } if
+   3 1 roll
+   exch len exch sub 1 add box
+} bind def
+
+/lbox {
+   3 1 roll
+   len exch sub 1 add box
+} bind def
+
+/drawseq {
+% print sequence along all 4 sides
+[ [0.7 -0.3 0 ]
+  [0.7 0.7 len add 0]
+  [-0.3 len sub -0.4 -90]
+  [-0.3 len sub 0.7 len add -90]
+] {
+   gsave
+    aload pop rotate translate
+    0 1 len 1 sub {
+     dup 0 moveto
+     sequence exch 1 getinterval
+     show
+    } for
+   grestore
+  } forall
+} bind def
+
+/drawgrid{
+  0.01 setlinewidth
+  len log 0.9 sub cvi 10 exch exp  % grid spacing
+  dup 1 gt {
+     dup dup 20 div dup 2 array astore exch 40 div setdash
+  } { [0.3 0.7] 0.1 setdash } ifelse
+  0 exch len {
+     dup dup
+     0 moveto
+     len lineto
+     dup
+     len exch sub 0 exch moveto
+     len exch len exch sub lineto
+     stroke
+  } for
+  [] 0 setdash
+  0.04 setlinewidth
+  currentdict /cutpoint known {
+    cutpoint 1 sub
+    dup dup -1 moveto len 1 add lineto
+    len exch sub dup
+    -1 exch moveto len 1 add exch lineto
+    stroke
+  } if
+  0.5 neg dup translate
+} bind def
+
+end
+%%EndProlog
+DPdict begin
+%delete next line to get rid of title
+270 665 moveto /Helvetica findfont 14 scalefont setfont (ABt) show
+
+/sequence { (\
+GCGCUUCGCCGCGCGCCGCUAGCAUGCUACGUCAAGCUAGCUAUGCAUA\
+) } def
+/len { sequence length } bind def
+
+/cutpoint 18 def
+
+72 216 translate
+72 6 mul len 1 add div dup scale
+/Helvetica findfont 0.95 scalefont setfont
+
+drawseq
+0.5 dup translate
+% draw diagonal
+0.04 setlinewidth
+0 len moveto len 0 lineto stroke
+
+/min { 2 copy gt { exch } if pop } bind def
+
+/utri{ % i j prob utri
+  gsave
+  1 min 2 div
+  0.85 mul 0.15 add 0.95  0.33
+  3 1 roll % prepare hsb color
+  sethsbcolor
+  % now produce the coordinates for lines
+  exch 1 sub dup len exch sub dup 4 -1 roll dup 3 1 roll dup len exch sub
+  moveto lineto lineto closepath fill
+  grestore
+} bind def
+/uHmotif{ % i j uHmotif
+  gsave
+  1 min 2 div
+  0.85 mul 0.15 add 0.95  0.99
+  3 1 roll % prepare hsb color
+  sethsbcolor
+  % now produce the coordinates for lines
+  exch 1 sub dup len exch sub dup 4 -1 roll dup 3 1 roll dup len exch sub
+  moveto lineto lineto closepath fill
+  grestore
+} bind def
+/lHmotif{ % i j lHmotif
+  gsave
+  1 min 2 div
+  0.85 mul 0.15 add 0.95  0.99
+  3 1 roll % prepare hsb color
+  sethsbcolor
+  % now produce the coordinates for lines
+  dup len exch sub dup 4 -1 roll 1 sub dup 3 1 roll dup len exch sub
+  moveto lineto lineto closepath fill
+  grestore
+} bind def
+/uImotif{ % i j k l uImotif
+  gsave
+  1 min 2 div
+  0.85 mul 0.15 add 0.95  0.99
+  3 1 roll % prepare hsb color
+  sethsbcolor
+  % now produce the coordinates for lines
+  1 sub dup 5 1 roll exch len exch sub dup 5 1 roll 3 -1 roll dup
+  5 1 roll exch 4 1 roll 3 1 roll exch 1 sub len exch sub dup 3 1 roll
+  moveto lineto lineto lineto closepath fill
+  grestore
+} bind def
+/lImotif{ % i j k l lImotif
+  gsave
+  1 min 2 div
+  0.85 mul 0.15 add 0.95  0.99
+  3 1 roll % prepare hsb color
+  sethsbcolor
+  % now produce the coordinates for lines
+  4 -1 roll 1 sub dup 5 1 roll exch 1 sub len exch sub dup 3 -1 roll exch
+  5 -1 roll len exch sub dup 6 -1 roll dup 3 1 roll 7 4 roll
+  moveto lineto lineto lineto closepath fill
+  grestore
+} bind def
+
+%data starts here
+
+%start of quadruplex data
+
+%start of Hmotif data
+
+%start of Imotif data
+
+%draw the grid
+drawgrid
+
+%start of base pair probability data
+1 9 0.037829123 ubox
+1 10 0.007975483 ubox
+1 12 0.110680074 ubox
+1 14 0.991198640 ubox
+1 16 0.007915894 ubox
+1 19 0.011079904 ubox
+1 41 0.003876483 ubox
+1 46 0.033683817 ubox
+2 8 0.038120402 ubox
+2 11 0.110756814 ubox
+2 13 0.992046226 ubox
+2 15 0.010808326 ubox
+2 18 0.010985480 ubox
+2 40 0.003861665 ubox
+2 45 0.033373703 ubox
+3 7 0.035674616 ubox
+3 9 0.040111263 ubox
+3 10 0.101105865 ubox
+3 12 0.992357885 ubox
+3 14 0.019383449 ubox
+3 16 0.007963087 ubox
+3 19 0.005650129 ubox
+3 37 0.005299179 ubox
+3 44 0.018057447 ubox
+3 46 0.012529044 ubox
+4 8 0.055304685 ubox
+4 11 0.991315173 ubox
+4 13 0.019400499 ubox
+4 15 0.007758168 ubox
+4 18 0.005648085 ubox
+4 36 0.005318850 ubox
+4 45 0.012519933 ubox
+5 11 0.006154024 ubox
+5 35 0.005294088 ubox
+6 34 0.004830608 ubox
+7 13 0.004536307 ubox
+7 15 0.024108248 ubox
+7 31 0.003448423 ubox
+8 12 0.004350371 ubox
+8 14 0.025786374 ubox
+8 16 0.010605222 ubox
+8 30 0.003478126 ubox
+8 32 0.004061566 ubox
+8 46 0.003449736 ubox
+9 13 0.025602321 ubox
+9 15 0.010591504 ubox
+9 31 0.004112244 ubox
+9 45 0.003419846 ubox
+11 19 0.010010877 ubox
+11 27 0.005409638 ubox
+11 46 0.026139254 ubox
+11 48 0.006488141 ubox
+12 18 0.010016411 ubox
+12 26 0.005413460 ubox
+12 45 0.026152873 ubox
+13 19 0.038756899 ubox
+13 25 0.005357320 ubox
+13 44 0.018690092 ubox
+13 46 0.100116654 ubox
+13 48 0.010145174 ubox
+14 18 0.038814634 ubox
+14 45 0.100246431 ubox
+15 19 0.417806433 ubox
+15 20 0.007682809 ubox
+15 23 0.010439819 ubox
+15 41 0.008181815 ubox
+15 42 0.013919204 ubox
+15 44 0.071878780 ubox
+15 46 0.899007069 ubox
+15 48 0.019285404 ubox
+16 18 0.416869760 ubox
+16 22 0.010476100 ubox
+16 40 0.007184200 ubox
+16 45 0.896755136 ubox
+17 18 0.013401563 ubox
+17 45 0.027779415 ubox
+18 41 0.901319079 ubox
+18 42 0.008848484 ubox
+18 44 0.010638743 ubox
+18 46 0.013655483 ubox
+19 40 0.902905508 ubox
+19 45 0.014161490 ubox
+20 39 0.902710514 ubox
+20 43 0.110113710 ubox
+20 47 0.038454016 ubox
+20 49 0.063086215 ubox
+21 38 0.902712957 ubox
+21 42 0.116472115 ubox
+21 48 0.073513846 ubox
+22 37 0.902874844 ubox
+22 41 0.117138324 ubox
+22 46 0.412677464 ubox
+23 36 0.902231482 ubox
+23 40 0.117020428 ubox
+23 45 0.413112180 ubox
+24 32 0.120150255 ubox
+24 38 0.016404359 ubox
+24 44 0.412583408 ubox
+24 48 0.004886247 ubox
+25 31 0.121487669 ubox
+25 34 0.827963219 ubox
+25 35 0.095456882 ubox
+25 39 0.016748812 ubox
+25 43 0.398683266 ubox
+25 47 0.005172865 ubox
+26 30 0.116290530 ubox
+26 32 0.144711163 ubox
+26 33 0.825607359 ubox
+26 37 0.118260140 ubox
+26 38 0.003372730 ubox
+26 41 0.405746349 ubox
+26 42 0.077413565 ubox
+26 46 0.005254924 ubox
+27 31 0.387181708 ubox
+27 36 0.118554864 ubox
+27 40 0.413124750 ubox
+27 45 0.005249682 ubox
+28 34 0.007603651 ubox
+28 35 0.115625179 ubox
+28 39 0.412780125 ubox
+29 38 0.409400898 ubox
+30 36 0.256248150 ubox
+31 37 0.252886235 ubox
+31 38 0.003983701 ubox
+31 41 0.004420922 ubox
+32 36 0.236655112 ubox
+32 40 0.003989664 ubox
+40 46 0.004665401 ubox
+41 45 0.004638725 ubox
+1 14 0.9746794 lbox
+2 13 0.9746794 lbox
+3 12 0.9746794 lbox
+4 11 0.9746794 lbox
+15 46 0.9746794 lbox
+16 45 0.9746794 lbox
+18 41 0.9746794 lbox
+19 40 0.9746794 lbox
+20 39 0.9746794 lbox
+21 38 0.9746794 lbox
+22 37 0.9746794 lbox
+23 36 0.9746794 lbox
+25 34 0.9746794 lbox
+26 33 0.9746794 lbox
+showpage
+end
+%%EOF

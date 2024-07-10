@@ -1,0 +1,969 @@
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: /home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: GNU/Linux
+[COMPILER]: GCC version "11.4.0"
+[STDLIB]: libstdc++ version 20230528
+[START_OPTIONS]
+ -in:file:fasta=rna_sequence_1.fasta -out:nstruct=100 -score:weights=/home/gxs/Rosetta/main/database/scoring/weights/stepwise/rna/rna_res_level_energy4.wts -corrections:restore_talaris_behavior -rna:denovo:cycles=1000 -rna:denovo:minimize_rna -rna:denovo:secstruct_file=rna_sequence_1.ss -rna:denovo:offset=0 -rna:denovo:tag=helix0 -full_model:working_res=1 2 3 4 21 22 23 24 -denovo:use_legacy_job_distributor
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(backtrace_string[abi:cxx11](int)+0x5a) [0x7d1246fab35a]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe0) [0x7d1246fe9310]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::UtilityExitException::UtilityExitException(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x113) [0x7d1246fb04d3]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::exit(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)+0x3b) [0x7d1246fb011b]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.3.so(core::pose::rna::RNA_SecStruct::set_basepairs_from_secstruct()+0xe3e) [0x7d1241eb09fe]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.3.so(core::pose::rna::RNA_SecStruct::RNA_SecStruct(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xcc3) [0x7d1241ebbd83]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.6.so(core::import_pose::RNA_DeNovoSetup::de_novo_setup_from_options(utility::options::OptionCollection const&)+0x902) [0x7d1248914912]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.6.so(core::import_pose::RNA_DeNovoSetup::initialize_from_options(utility::options::OptionCollection const&)+0xa2) [0x7d1248922232]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xef79) [0x5f7e4c29df79]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xfede) [0x5f7e4c29eede]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd1c0) [0x5f7e4c29c1c0]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7d1246629d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7d1246629e40]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd335) [0x5f7e4c29c335]
+
+[END_BACKTRACE]
+
+[FILE]: src/core/pose/rna/RNA_SecStruct.cc
+[LINE]: 137
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: Number of right brackets does not match left brackets
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: /home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: GNU/Linux
+[COMPILER]: GCC version "11.4.0"
+[STDLIB]: libstdc++ version 20230528
+[START_OPTIONS]
+ -in:file:fasta=rna_sequence_1.fasta -rna:denovo:secstruct=((((.(((((....))))).)))).......((((....))))..
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(backtrace_string[abi:cxx11](int)+0x5a) [0x7d10a51ab35a]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe0) [0x7d10a51e9310]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::UtilityExitException::UtilityExitException(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x113) [0x7d10a51b04d3]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::exit(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)+0x3b) [0x7d10a51b011b]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.3.so(core::pose::rna::RNA_SecStruct::check_compatible_with_sequence(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool) const+0x1092) [0x7d10a00b6732]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libprotocols_d.6.so(protocols::rna::denovo::movers::RNA_DeNovoProtocolMover::check_secstructs(bool, bool, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, core::pose::rna::RNA_SecStruct const&, core::pose::rna::RNA_SecStruct const&)+0x160) [0x7d10a7cb66b0]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libprotocols_d.6.so(protocols::rna::denovo::movers::RNA_DeNovoProtocolMover::de_novo_setup_from_options(utility::options::OptionCollection const&)+0x499) [0x7d10a7cd4709]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xe998) [0x5af365a79998]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xff73) [0x5af365a7af73]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd1c0) [0x5af365a781c0]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7d10a4829d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7d10a4829e40]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd335) [0x5af365a78335]
+
+[END_BACKTRACE]
+
+[FILE]: src/core/pose/rna/RNA_SecStruct.cc
+[LINE]: 284
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: Not complementary at positions A   10 and U   15
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: /home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: GNU/Linux
+[COMPILER]: GCC version "11.4.0"
+[STDLIB]: libstdc++ version 20230528
+[START_OPTIONS]
+ -in:file:fasta=rna_sequence_1.fasta -rna:denovo:secstruct=((((.(((((....))))).)))).......((((....))))..
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(backtrace_string[abi:cxx11](int)+0x5a) [0x7915dffab35a]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe0) [0x7915dffe9310]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::UtilityExitException::UtilityExitException(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x113) [0x7915dffb04d3]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::exit(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)+0x3b) [0x7915dffb011b]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.3.so(core::pose::rna::RNA_SecStruct::check_compatible_with_sequence(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool) const+0x1092) [0x7915daeb6732]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libprotocols_d.6.so(protocols::rna::denovo::movers::RNA_DeNovoProtocolMover::check_secstructs(bool, bool, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, core::pose::rna::RNA_SecStruct const&, core::pose::rna::RNA_SecStruct const&)+0x160) [0x7915e2ab66b0]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libprotocols_d.6.so(protocols::rna::denovo::movers::RNA_DeNovoProtocolMover::de_novo_setup_from_options(utility::options::OptionCollection const&)+0x499) [0x7915e2ad4709]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xe998) [0x5f2960a1f998]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xff73) [0x5f2960a20f73]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd1c0) [0x5f2960a1e1c0]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7915df629d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7915df629e40]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd335) [0x5f2960a1e335]
+
+[END_BACKTRACE]
+
+[FILE]: src/core/pose/rna/RNA_SecStruct.cc
+[LINE]: 284
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: Not complementary at positions A   10 and U   15
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: /home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: GNU/Linux
+[COMPILER]: GCC version "11.4.0"
+[STDLIB]: libstdc++ version 20230528
+[START_OPTIONS]
+ -in:file:fasta=rna_sequence_1.fasta -rna:denovo:secstruct=((((.(((((....))))).)))).......((((....))))..
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(backtrace_string[abi:cxx11](int)+0x5a) [0x7bd5bd3ab35a]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe0) [0x7bd5bd3e9310]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::UtilityExitException::UtilityExitException(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x113) [0x7bd5bd3b04d3]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::exit(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)+0x3b) [0x7bd5bd3b011b]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.3.so(core::pose::rna::RNA_SecStruct::check_compatible_with_sequence(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool) const+0x1092) [0x7bd5b82b6732]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libprotocols_d.6.so(protocols::rna::denovo::movers::RNA_DeNovoProtocolMover::check_secstructs(bool, bool, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, core::pose::rna::RNA_SecStruct const&, core::pose::rna::RNA_SecStruct const&)+0x160) [0x7bd5bfeb66b0]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libprotocols_d.6.so(protocols::rna::denovo::movers::RNA_DeNovoProtocolMover::de_novo_setup_from_options(utility::options::OptionCollection const&)+0x499) [0x7bd5bfed4709]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xe998) [0x635952c07998]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xff73) [0x635952c08f73]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd1c0) [0x635952c061c0]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7bd5bca29d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7bd5bca29e40]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd335) [0x635952c06335]
+
+[END_BACKTRACE]
+
+[FILE]: src/core/pose/rna/RNA_SecStruct.cc
+[LINE]: 284
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: Not complementary at positions A   10 and U   15
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: /home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: GNU/Linux
+[COMPILER]: GCC version "11.4.0"
+[STDLIB]: libstdc++ version 20230528
+[START_OPTIONS]
+ -in:file:fasta=rna_sequence_1.fasta -rna:denovo:secstruct=((((.(((((....))))).)))).......((((....))))..
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(backtrace_string[abi:cxx11](int)+0x5a) [0x77a076fab35a]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe0) [0x77a076fe9310]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::UtilityExitException::UtilityExitException(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x113) [0x77a076fb04d3]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::exit(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)+0x3b) [0x77a076fb011b]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.3.so(core::pose::rna::RNA_SecStruct::check_compatible_with_sequence(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool) const+0x1092) [0x77a071eb6732]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libprotocols_d.6.so(protocols::rna::denovo::movers::RNA_DeNovoProtocolMover::check_secstructs(bool, bool, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, core::pose::rna::RNA_SecStruct const&, core::pose::rna::RNA_SecStruct const&)+0x160) [0x77a079ab66b0]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libprotocols_d.6.so(protocols::rna::denovo::movers::RNA_DeNovoProtocolMover::de_novo_setup_from_options(utility::options::OptionCollection const&)+0x499) [0x77a079ad4709]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xe998) [0x56fdbad12998]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xff73) [0x56fdbad13f73]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd1c0) [0x56fdbad111c0]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x77a076629d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x77a076629e40]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd335) [0x56fdbad11335]
+
+[END_BACKTRACE]
+
+[FILE]: src/core/pose/rna/RNA_SecStruct.cc
+[LINE]: 284
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: Not complementary at positions A   10 and U   15
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: /home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: GNU/Linux
+[COMPILER]: GCC version "11.4.0"
+[STDLIB]: libstdc++ version 20230528
+[START_OPTIONS]
+ -in:file:fasta=rna_sequence_1.fasta -rna:denovo:secstruct=((((.(((((....))))).)))).......((((....))))..
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(backtrace_string[abi:cxx11](int)+0x5a) [0x7091539ab35a]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe0) [0x7091539e9310]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::UtilityExitException::UtilityExitException(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x113) [0x7091539b04d3]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::exit(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)+0x3b) [0x7091539b011b]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.3.so(core::pose::rna::RNA_SecStruct::check_compatible_with_sequence(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool) const+0x1092) [0x70914e8b6732]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libprotocols_d.6.so(protocols::rna::denovo::movers::RNA_DeNovoProtocolMover::check_secstructs(bool, bool, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, core::pose::rna::RNA_SecStruct const&, core::pose::rna::RNA_SecStruct const&)+0x160) [0x7091564b66b0]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libprotocols_d.6.so(protocols::rna::denovo::movers::RNA_DeNovoProtocolMover::de_novo_setup_from_options(utility::options::OptionCollection const&)+0x499) [0x7091564d4709]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xe998) [0x581d07825998]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xff73) [0x581d07826f73]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd1c0) [0x581d078241c0]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x709153029d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x709153029e40]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd335) [0x581d07824335]
+
+[END_BACKTRACE]
+
+[FILE]: src/core/pose/rna/RNA_SecStruct.cc
+[LINE]: 284
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: Not complementary at positions A   10 and U   15
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: /home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: GNU/Linux
+[COMPILER]: GCC version "11.4.0"
+[STDLIB]: libstdc++ version 20230528
+[START_OPTIONS]
+ -in:file:fasta=rna_sequence_1.fasta -out:nstruct=100 -score:weights=stepwise/rna/rna_res_level_energy4.wts -corrections:restore_talaris_behavior -rna:denovo:cycles=1000 -rna:denovo:minimize_rna -rna:denovo:secstruct_file=rna_sequence_1.ss -rna:denovo:offset=0 -rna:denovo:tag=helix0 -full_model:working_res=1 2 3 4 21 22 23 24 -denovo:use_legacy_job_distributor
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(backtrace_string[abi:cxx11](int)+0x5a) [0x7c44493ab35a]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe0) [0x7c44493e9310]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::UtilityExitException::UtilityExitException(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x113) [0x7c44493b04d3]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::exit(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)+0x3b) [0x7c44493b011b]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.3.so(core::pose::rna::RNA_SecStruct::set_basepairs_from_secstruct()+0xe3e) [0x7c44442b09fe]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.3.so(core::pose::rna::RNA_SecStruct::RNA_SecStruct(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xcc3) [0x7c44442bbd83]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.6.so(core::import_pose::RNA_DeNovoSetup::de_novo_setup_from_options(utility::options::OptionCollection const&)+0x902) [0x7c444ad14912]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.6.so(core::import_pose::RNA_DeNovoSetup::initialize_from_options(utility::options::OptionCollection const&)+0xa2) [0x7c444ad22232]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xef79) [0x58e6cbe3cf79]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xfede) [0x58e6cbe3dede]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd1c0) [0x58e6cbe3b1c0]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7c4448a29d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7c4448a29e40]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd335) [0x58e6cbe3b335]
+
+[END_BACKTRACE]
+
+[FILE]: src/core/pose/rna/RNA_SecStruct.cc
+[LINE]: 137
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: Number of right brackets does not match left brackets
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: /home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: GNU/Linux
+[COMPILER]: GCC version "11.4.0"
+[STDLIB]: libstdc++ version 20230528
+[START_OPTIONS]
+ -in:file:fasta=rna_sequence_1.fasta -out:nstruct=100 -score:weights=stepwise/rna/rna_res_level_energy4.wts -corrections:restore_talaris_behavior -rna:denovo:cycles=1000 -rna:denovo:minimize_rna -rna:denovo:secstruct_file=rna_sequence_1.ss -rna:denovo:offset=0 -rna:denovo:tag=helix0 -full_model:working_res=1 2 3 4 21 22 23 24 -denovo:use_legacy_job_distributor
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(backtrace_string[abi:cxx11](int)+0x5a) [0x7fb1c01ab35a]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe0) [0x7fb1c01e9310]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::UtilityExitException::UtilityExitException(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x113) [0x7fb1c01b04d3]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::exit(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)+0x3b) [0x7fb1c01b011b]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.3.so(core::pose::rna::RNA_SecStruct::set_basepairs_from_secstruct()+0xe3e) [0x7fb1bb0b09fe]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.3.so(core::pose::rna::RNA_SecStruct::RNA_SecStruct(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xcc3) [0x7fb1bb0bbd83]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.6.so(core::import_pose::RNA_DeNovoSetup::de_novo_setup_from_options(utility::options::OptionCollection const&)+0x902) [0x7fb1c1b14912]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.6.so(core::import_pose::RNA_DeNovoSetup::initialize_from_options(utility::options::OptionCollection const&)+0xa2) [0x7fb1c1b22232]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xef79) [0x61f57b8c2f79]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xfede) [0x61f57b8c3ede]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd1c0) [0x61f57b8c11c0]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7fb1bf829d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7fb1bf829e40]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd335) [0x61f57b8c1335]
+
+[END_BACKTRACE]
+
+[FILE]: src/core/pose/rna/RNA_SecStruct.cc
+[LINE]: 137
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: Number of right brackets does not match left brackets
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: /home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: GNU/Linux
+[COMPILER]: GCC version "11.4.0"
+[STDLIB]: libstdc++ version 20230528
+[START_OPTIONS]
+ -in:file:fasta=rna_sequence_1.fasta -out:nstruct=100 -score:weights=stepwise/rna/rna_res_level_energy4.wts -corrections:restore_talaris_behavior -rna:denovo:cycles=1000 -rna:denovo:minimize_rna -rna:denovo:secstruct_file=rna_sequence_1.ss -rna:denovo:offset=0 -rna:denovo:tag=helix0 -full_model:working_res=1 2 3 4 21 22 23 24 -denovo:use_legacy_job_distributor
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(backtrace_string[abi:cxx11](int)+0x5a) [0x74b9987ab35a]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe0) [0x74b9987e9310]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::UtilityExitException::UtilityExitException(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x113) [0x74b9987b04d3]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::exit(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)+0x3b) [0x74b9987b011b]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.3.so(core::pose::rna::RNA_SecStruct::set_basepairs_from_secstruct()+0xe3e) [0x74b9936b09fe]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.3.so(core::pose::rna::RNA_SecStruct::RNA_SecStruct(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xcc3) [0x74b9936bbd83]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.6.so(core::import_pose::RNA_DeNovoSetup::de_novo_setup_from_options(utility::options::OptionCollection const&)+0x902) [0x74b99a114912]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.6.so(core::import_pose::RNA_DeNovoSetup::initialize_from_options(utility::options::OptionCollection const&)+0xa2) [0x74b99a122232]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xef79) [0x61375eb0cf79]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xfede) [0x61375eb0dede]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd1c0) [0x61375eb0b1c0]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x74b997e29d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x74b997e29e40]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd335) [0x61375eb0b335]
+
+[END_BACKTRACE]
+
+[FILE]: src/core/pose/rna/RNA_SecStruct.cc
+[LINE]: 137
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: Number of right brackets does not match left brackets
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: /home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: GNU/Linux
+[COMPILER]: GCC version "11.4.0"
+[STDLIB]: libstdc++ version 20230528
+[START_OPTIONS]
+ -in:file:fasta=rna_sequence_1.fasta -out:nstruct=100 -score:weights=stepwise/rna/rna_res_level_energy4.wts -corrections:restore_talaris_behavior -rna:denovo:cycles=1000 -rna:denovo:minimize_rna -rna:denovo:secstruct_file=rna_sequence_1.ss -rna:denovo:offset=0 -rna:denovo:tag=helix0 -full_model:working_res=1 2 3 4 21 22 23 24 -denovo:use_legacy_job_distributor
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(backtrace_string[abi:cxx11](int)+0x5a) [0x7e0d19dab35a]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe0) [0x7e0d19de9310]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::UtilityExitException::UtilityExitException(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x113) [0x7e0d19db04d3]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::exit(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)+0x3b) [0x7e0d19db011b]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.3.so(core::pose::rna::RNA_SecStruct::check_compatible_with_sequence(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool) const+0x1092) [0x7e0d14cb6732]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.6.so(core::import_pose::RNA_DeNovoSetup::de_novo_setup_from_options(utility::options::OptionCollection const&)+0x3214) [0x7e0d1b717224]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.6.so(core::import_pose::RNA_DeNovoSetup::initialize_from_options(utility::options::OptionCollection const&)+0xa2) [0x7e0d1b722232]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xef79) [0x57b0e1206f79]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xfede) [0x57b0e1207ede]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd1c0) [0x57b0e12051c0]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7e0d19429d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7e0d19429e40]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd335) [0x57b0e1205335]
+
+[END_BACKTRACE]
+
+[FILE]: src/core/pose/rna/RNA_SecStruct.cc
+[LINE]: 284
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: Not complementary at positions A   10 and U   15
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: /home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: GNU/Linux
+[COMPILER]: GCC version "11.4.0"
+[STDLIB]: libstdc++ version 20230528
+[START_OPTIONS]
+ -in:file:fasta=rna_sequence_1.fasta -rna:denovo:secstruct=((((.(((((....))))).)))).......((((....))))..
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(backtrace_string[abi:cxx11](int)+0x5a) [0x7a9daffab35a]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe0) [0x7a9daffe9310]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::UtilityExitException::UtilityExitException(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x113) [0x7a9daffb04d3]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::exit(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)+0x3b) [0x7a9daffb011b]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.3.so(core::pose::rna::RNA_SecStruct::check_compatible_with_sequence(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool) const+0x1092) [0x7a9daaeb6732]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libprotocols_d.6.so(protocols::rna::denovo::movers::RNA_DeNovoProtocolMover::check_secstructs(bool, bool, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, core::pose::rna::RNA_SecStruct const&, core::pose::rna::RNA_SecStruct const&)+0x160) [0x7a9db2ab66b0]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libprotocols_d.6.so(protocols::rna::denovo::movers::RNA_DeNovoProtocolMover::de_novo_setup_from_options(utility::options::OptionCollection const&)+0x499) [0x7a9db2ad4709]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xe998) [0x5f4b75a39998]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xff73) [0x5f4b75a3af73]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd1c0) [0x5f4b75a381c0]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7a9daf629d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7a9daf629e40]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd335) [0x5f4b75a38335]
+
+[END_BACKTRACE]
+
+[FILE]: src/core/pose/rna/RNA_SecStruct.cc
+[LINE]: 284
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: Not complementary at positions A   10 and T   15
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: /home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: GNU/Linux
+[COMPILER]: GCC version "11.4.0"
+[STDLIB]: libstdc++ version 20230528
+[START_OPTIONS]
+ -in:file:fasta=rna_sequence_1.fasta -out:nstruct=100 -score:weights=/home/gxs/Rosetta/main/database/scoring/weights/stepwise/rna/rna_res_level_energy4.wts -corrections:restore_talaris_behavior -rna:denovo:cycles=1000 -rna:denovo:minimize_rna -rna:denovo:secstruct_file=rna_sequence_1.ss -rna:denovo:offset=0 -rna:denovo:tag=helix0 -full_model:working_res=1 2 3 4 21 22 23 24 -denovo:use_legacy_job_distributor
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(backtrace_string[abi:cxx11](int)+0x5a) [0x7a7e1b5ab35a]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe0) [0x7a7e1b5e9310]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::UtilityExitException::UtilityExitException(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x113) [0x7a7e1b5b04d3]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::exit(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)+0x3b) [0x7a7e1b5b011b]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.3.so(core::pose::rna::RNA_SecStruct::set_basepairs_from_secstruct()+0xe3e) [0x7a7e164b09fe]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.3.so(core::pose::rna::RNA_SecStruct::RNA_SecStruct(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xcc3) [0x7a7e164bbd83]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.6.so(core::import_pose::RNA_DeNovoSetup::de_novo_setup_from_options(utility::options::OptionCollection const&)+0x902) [0x7a7e1cf14912]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.6.so(core::import_pose::RNA_DeNovoSetup::initialize_from_options(utility::options::OptionCollection const&)+0xa2) [0x7a7e1cf22232]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xef79) [0x64d6d75fcf79]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xfede) [0x64d6d75fdede]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd1c0) [0x64d6d75fb1c0]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7a7e1ac29d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7a7e1ac29e40]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd335) [0x64d6d75fb335]
+
+[END_BACKTRACE]
+
+[FILE]: src/core/pose/rna/RNA_SecStruct.cc
+[LINE]: 137
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: Number of right brackets does not match left brackets
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: /home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: GNU/Linux
+[COMPILER]: GCC version "11.4.0"
+[STDLIB]: libstdc++ version 20230528
+[START_OPTIONS]
+ -in:file:fasta=rna_sequence_1.fasta -out:nstruct=100 -score:weights=/home/gxs/Rosetta/main/database/scoring/weights/stepwise/rna/rna_res_level_energy4.wts -corrections:restore_talaris_behavior -rna:denovo:cycles=1000 -rna:denovo:minimize_rna -rna:denovo:secstruct_file=rna_sequence_1.ss -rna:denovo:offset=0 -rna:denovo:tag=helix0 -full_model:working_res=1 2 3 4 21 22 23 24 -denovo:use_legacy_job_distributor
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(backtrace_string[abi:cxx11](int)+0x5a) [0x76c54f3ab35a]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe0) [0x76c54f3e9310]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::UtilityExitException::UtilityExitException(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x113) [0x76c54f3b04d3]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::exit(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)+0x3b) [0x76c54f3b011b]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.3.so(core::pose::rna::RNA_SecStruct::check_compatible_with_sequence(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool) const+0x1092) [0x76c54a2b6732]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.6.so(core::import_pose::RNA_DeNovoSetup::de_novo_setup_from_options(utility::options::OptionCollection const&)+0x3214) [0x76c550d17224]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.6.so(core::import_pose::RNA_DeNovoSetup::initialize_from_options(utility::options::OptionCollection const&)+0xa2) [0x76c550d22232]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xef79) [0x60782d50ef79]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xfede) [0x60782d50fede]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd1c0) [0x60782d50d1c0]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x76c54ea29d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x76c54ea29e40]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd335) [0x60782d50d335]
+
+[END_BACKTRACE]
+
+[FILE]: src/core/pose/rna/RNA_SecStruct.cc
+[LINE]: 284
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: Not complementary at positions A   10 and T   15
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: /home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: GNU/Linux
+[COMPILER]: GCC version "11.4.0"
+[STDLIB]: libstdc++ version 20230528
+[START_OPTIONS]
+ -in:file:fasta=rna_sequence_1.fasta -rna:denovo:secstruct=.....(((((....))))).
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(backtrace_string[abi:cxx11](int)+0x5a) [0x71b376bab35a]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe0) [0x71b376be9310]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::UtilityExitException::UtilityExitException(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x113) [0x71b376bb04d3]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::exit(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)+0x3b) [0x71b376bb011b]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.3.so(core::pose::rna::RNA_SecStruct::check_compatible_with_sequence(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool) const+0x1092) [0x71b371ab6732]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libprotocols_d.6.so(protocols::rna::denovo::movers::RNA_DeNovoProtocolMover::check_secstructs(bool, bool, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, core::pose::rna::RNA_SecStruct const&, core::pose::rna::RNA_SecStruct const&)+0x160) [0x71b3796b66b0]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libprotocols_d.6.so(protocols::rna::denovo::movers::RNA_DeNovoProtocolMover::de_novo_setup_from_options(utility::options::OptionCollection const&)+0x499) [0x71b3796d4709]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xe998) [0x6489c94c6998]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xff73) [0x6489c94c7f73]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd1c0) [0x6489c94c51c0]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x71b376229d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x71b376229e40]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd335) [0x6489c94c5335]
+
+[END_BACKTRACE]
+
+[FILE]: src/core/pose/rna/RNA_SecStruct.cc
+[LINE]: 284
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: Not complementary at positions U   10 and A   15
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: /home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: GNU/Linux
+[COMPILER]: GCC version "11.4.0"
+[STDLIB]: libstdc++ version 20230528
+[START_OPTIONS]
+ -in:file:fasta=rna_sequence_1.fasta -out:nstruct=100 -score:weights=/home/gxs/Rosetta/main/database/scoring/weights/stepwise/rna/rna_res_level_energy4.wts -corrections:restore_talaris_behavior -rna:denovo:cycles=1000 -rna:denovo:minimize_rna -rna:denovo:secstruct_file=rna_sequence_1.ss -rna:denovo:offset=0 -rna:denovo:tag=helix0 -full_model:working_res=1 2 3 4 21 22 23 24 -denovo:use_legacy_job_distributor
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(backtrace_string[abi:cxx11](int)+0x5a) [0x7d47f33ab35a]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe0) [0x7d47f33e9310]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::UtilityExitException::UtilityExitException(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x113) [0x7d47f33b04d3]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::exit(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)+0x3b) [0x7d47f33b011b]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.3.so(core::pose::full_model_info::FullModelParameters::conventional_to_full(int, char, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const+0x38d) [0x7d47ee21243d]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.3.so(core::pose::full_model_info::FullModelParameters::conventional_to_full(std::tuple<utility::vector1<int, std::allocator<int> >, utility::vector1<char, std::allocator<char> >, utility::vector1<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) const+0xab) [0x7d47ee21290b]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.6.so(core::import_pose::RNA_DeNovoSetup::de_novo_setup_from_options(utility::options::OptionCollection const&)+0x393) [0x7d47f4d143a3]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.6.so(core::import_pose::RNA_DeNovoSetup::initialize_from_options(utility::options::OptionCollection const&)+0xa2) [0x7d47f4d22232]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xef79) [0x63a3fad75f79]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xfede) [0x63a3fad76ede]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd1c0) [0x63a3fad741c0]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7d47f2a29d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7d47f2a29e40]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd335) [0x63a3fad74335]
+
+[END_BACKTRACE]
+
+[FILE]: src/core/pose/full_model_info/FullModelParameters.cc
+[LINE]: 427
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: Could not match residue number  21 and chain " " and segid "    "
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: /home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: GNU/Linux
+[COMPILER]: GCC version "11.4.0"
+[STDLIB]: libstdc++ version 20230528
+[START_OPTIONS]
+ -in:file:fasta=rna_sequence_1.fasta -out:nstruct=100 -score:weights=/home/gxs/Rosetta/main/database/scoring/weights/stepwise/rna/rna_res_level_energy4.wts -corrections:restore_talaris_behavior -rna:denovo:cycles=1000 -rna:denovo:minimize_rna -rna:denovo:secstruct_file=rna_sequence_1.ss -rna:denovo:offset=0 -rna:denovo:tag=helix0 -full_model:working_res=1 2 3 4 21 22 23 24 -denovo:use_legacy_job_distributor
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(backtrace_string[abi:cxx11](int)+0x5a) [0x717e1edab35a]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe0) [0x717e1ede9310]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::UtilityExitException::UtilityExitException(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x113) [0x717e1edb04d3]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::exit(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)+0x3b) [0x717e1edb011b]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.3.so(core::pose::full_model_info::FullModelParameters::conventional_to_full(int, char, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const+0x38d) [0x717e19c1243d]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.3.so(core::pose::full_model_info::FullModelParameters::conventional_to_full(std::tuple<utility::vector1<int, std::allocator<int> >, utility::vector1<char, std::allocator<char> >, utility::vector1<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) const+0xab) [0x717e19c1290b]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.6.so(core::import_pose::RNA_DeNovoSetup::de_novo_setup_from_options(utility::options::OptionCollection const&)+0x393) [0x717e207143a3]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.6.so(core::import_pose::RNA_DeNovoSetup::initialize_from_options(utility::options::OptionCollection const&)+0xa2) [0x717e20722232]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xef79) [0x5d06e21c1f79]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xfede) [0x5d06e21c2ede]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd1c0) [0x5d06e21c01c0]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x717e1e429d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x717e1e429e40]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd335) [0x5d06e21c0335]
+
+[END_BACKTRACE]
+
+[FILE]: src/core/pose/full_model_info/FullModelParameters.cc
+[LINE]: 427
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: Could not match residue number  21 and chain " " and segid "    "
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: /home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: GNU/Linux
+[COMPILER]: GCC version "11.4.0"
+[STDLIB]: libstdc++ version 20230528
+[START_OPTIONS]
+ -in:file:fasta=rna_sequence_1.fasta -out:nstruct=100 -score:weights=/home/gxs/Rosetta/main/database/scoring/weights/stepwise/rna/rna_res_level_energy4.wts -corrections:restore_talaris_behavior -rna:denovo:cycles=1000 -rna:denovo:minimize_rna -rna:denovo:secstruct_file=rna_sequence_1.ss -rna:denovo:offset=0 -rna:denovo:tag=helix0 -full_model:working_res=1 2 3 4 21 22 23 24 -denovo:use_legacy_job_distributor
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(backtrace_string[abi:cxx11](int)+0x5a) [0x7ee293bab35a]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe0) [0x7ee293be9310]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::UtilityExitException::UtilityExitException(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x113) [0x7ee293bb04d3]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::exit(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)+0x3b) [0x7ee293bb011b]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.3.so(core::pose::full_model_info::FullModelParameters::conventional_to_full(int, char, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const+0x38d) [0x7ee28ea1243d]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.3.so(core::pose::full_model_info::FullModelParameters::conventional_to_full(std::tuple<utility::vector1<int, std::allocator<int> >, utility::vector1<char, std::allocator<char> >, utility::vector1<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > const&) const+0xab) [0x7ee28ea1290b]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.6.so(core::import_pose::RNA_DeNovoSetup::de_novo_setup_from_options(utility::options::OptionCollection const&)+0x393) [0x7ee2955143a3]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.6.so(core::import_pose::RNA_DeNovoSetup::initialize_from_options(utility::options::OptionCollection const&)+0xa2) [0x7ee295522232]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xef79) [0x5e401cb3cf79]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xfede) [0x5e401cb3dede]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd1c0) [0x5e401cb3b1c0]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7ee293229d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7ee293229e40]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd335) [0x5e401cb3b335]
+
+[END_BACKTRACE]
+
+[FILE]: src/core/pose/full_model_info/FullModelParameters.cc
+[LINE]: 427
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: Could not match residue number  21 and chain " " and segid "    "
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: /home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: GNU/Linux
+[COMPILER]: GCC version "11.4.0"
+[STDLIB]: libstdc++ version 20230528
+[START_OPTIONS]
+ -in:file:fasta=rna_sequence_1.fasta -rna:denovo:secstruct=((((((.((((.......)))).))...))))
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(backtrace_string[abi:cxx11](int)+0x5a) [0x75d98a5ab35a]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe0) [0x75d98a5e9310]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::UtilityExitException::UtilityExitException(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x113) [0x75d98a5b04d3]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::exit(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)+0x3b) [0x75d98a5b011b]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.3.so(core::pose::rna::RNA_SecStruct::check_compatible_with_sequence(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool) const+0x1092) [0x75d9854b6732]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libprotocols_d.6.so(protocols::rna::denovo::movers::RNA_DeNovoProtocolMover::check_secstructs(bool, bool, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, core::pose::rna::RNA_SecStruct const&, core::pose::rna::RNA_SecStruct const&)+0x160) [0x75d98d0b66b0]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libprotocols_d.6.so(protocols::rna::denovo::movers::RNA_DeNovoProtocolMover::de_novo_setup_from_options(utility::options::OptionCollection const&)+0x499) [0x75d98d0d4709]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xe998) [0x5d5188369998]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xff73) [0x5d518836af73]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd1c0) [0x5d51883681c0]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x75d989c29d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x75d989c29e40]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd335) [0x5d5188368335]
+
+[END_BACKTRACE]
+
+[FILE]: src/core/pose/rna/RNA_SecStruct.cc
+[LINE]: 284
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: Not complementary at positions U   11 and G   19
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: /home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: GNU/Linux
+[COMPILER]: GCC version "11.4.0"
+[STDLIB]: libstdc++ version 20230528
+[START_OPTIONS]
+ -in:file:fasta=rna_sequence_1.fasta -out:nstruct=100 -score:weights=/home/gxs/Rosetta/main/database/scoring/weights/stepwise/rna/rna_res_level_energy4.wts -corrections:restore_talaris_behavior -rna:denovo:cycles=1000 -rna:denovo:minimize_rna -rna:denovo:secstruct_file=rna_sequence_1.ss -rna:denovo:offset=0 -rna:denovo:tag=helix0 -full_model:working_res=1 2 3 4 21 22 23 24 -denovo:use_legacy_job_distributor
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(backtrace_string[abi:cxx11](int)+0x5a) [0x7054dabab35a]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe0) [0x7054dabe9310]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::UtilityExitException::UtilityExitException(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x113) [0x7054dabb04d3]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::exit(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)+0x3b) [0x7054dabb011b]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.3.so(core::pose::rna::RNA_SecStruct::set_basepairs_from_secstruct()+0xe3e) [0x7054d5ab09fe]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.3.so(core::pose::rna::RNA_SecStruct::RNA_SecStruct(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xcc3) [0x7054d5abbd83]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.6.so(core::import_pose::RNA_DeNovoSetup::de_novo_setup_from_options(utility::options::OptionCollection const&)+0x902) [0x7054dc514912]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.6.so(core::import_pose::RNA_DeNovoSetup::initialize_from_options(utility::options::OptionCollection const&)+0xa2) [0x7054dc522232]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xef79) [0x5bc24e8b6f79]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xfede) [0x5bc24e8b7ede]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd1c0) [0x5bc24e8b51c0]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7054da229d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7054da229e40]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd335) [0x5bc24e8b5335]
+
+[END_BACKTRACE]
+
+[FILE]: src/core/pose/rna/RNA_SecStruct.cc
+[LINE]: 137
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: Number of right brackets does not match left brackets
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2024.09+release.06b3cf8
+[COMMIT_DATE]: 2024-03-07T14:59:22.624665
+[APPLICATION]: /home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: GNU/Linux
+[COMPILER]: GCC version "11.4.0"
+[STDLIB]: libstdc++ version 20230528
+[START_OPTIONS]
+ -in:file:fasta=rna_sequence_1.fasta -out:nstruct=100 -score:weights=/home/gxs/Rosetta/main/database/scoring/weights/stepwise/rna/rna_res_level_energy4.wts -corrections:restore_talaris_behavior -rna:denovo:cycles=1000 -rna:denovo:minimize_rna -rna:denovo:secstruct_file=rna_sequence_1.ss -rna:denovo:offset=0 -rna:denovo:tag=helix0 -full_model:working_res=1 2 3 4 21 22 23 24 -denovo:use_legacy_job_distributor
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(backtrace_string[abi:cxx11](int)+0x5a) [0x771d94fab35a]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::excn::Exception::Exception(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xe0) [0x771d94fe9310]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::UtilityExitException::UtilityExitException(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x113) [0x771d94fb04d3]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libutility.so(utility::exit(char const*, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)+0x3b) [0x771d94fb011b]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.3.so(core::pose::rna::RNA_SecStruct::check_compatible_with_sequence(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool) const+0x1092) [0x771d8feb6732]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.6.so(core::import_pose::RNA_DeNovoSetup::de_novo_setup_from_options(utility::options::OptionCollection const&)+0x3214) [0x771d96917224]
+/home/gxs/Rosetta/main/source/build/src/release/linux/6.5/64/x86/gcc/11/default/libcore.6.so(core::import_pose::RNA_DeNovoSetup::initialize_from_options(utility::options::OptionCollection const&)+0xa2) [0x771d96922232]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xef79) [0x5b5e3ec8df79]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xfede) [0x5b5e3ec8eede]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd1c0) [0x5b5e3ec8c1c0]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x771d94629d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x771d94629e40]
+/home/gxs/Rosetta/main/source/bin/rna_denovo.linuxgccrelease(+0xd335) [0x5b5e3ec8c335]
+
+[END_BACKTRACE]
+
+[FILE]: src/core/pose/rna/RNA_SecStruct.cc
+[LINE]: 284
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: Not complementary at positions U   11 and G   19
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
